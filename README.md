@@ -11,19 +11,19 @@
 可以根据测试根据类级别、方法级别切换数据源功能
 ```
 {
-    "success": false,
-    "code": -1,
-    "messagg": "不想说话",
-    "data": null
+    "success": true,
+    "code": 0,
+    "messagg": "成功",
+    "data": ["id":1]
 }
 ```
 
 
 ```
 {
-    "success": false,
-    "code": -1,
+    "success": true,
+    "code": 0,
     "messagg": "成功",
-    "data": []
+    "data": ["id":11]
 }
 ```
