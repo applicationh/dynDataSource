@@ -1,0 +1,31 @@
+
+
+dynDatasource:
+  Address: localhost:3306
+  dataBase:
+    - "aData"
+    - "bData"
+spring:
+  datasource:
+    master:
+      username: root
+      password: 123456
+      jdbc-url: jdbc:mysql://${dynDatasource.Address}/${dynDatasource.dataBase[0]}?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    slave:
+      username: root
+      password: 123456
+      jdbc-url: jdbc:mysql://${dynDatasource.Address}/${dynDatasource.dataBase[1]}?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.wsh.pro.entity
+
+logging:
+  level:
+    com:
+      wsh:
+        pro:
+          dao : debug
